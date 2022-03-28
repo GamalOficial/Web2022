@@ -1,0 +1,12 @@
+import React from "react"
+
+class Questao02b extends React.Component{
+    
+    render() {
+        return <h2>Curso: Design Digital</h2>
+        
+        
+    }
+}
+
+export default Questao02b
