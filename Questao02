@@ -1,0 +1,12 @@
+import React from "react"
+
+class Questao02 extends React.Component{
+    
+    render() {
+        return <h1>Nome: Guilherme</h1>
+        
+        
+    }
+}
+
+export default Questao02
