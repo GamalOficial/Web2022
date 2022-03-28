@@ -1,0 +1,83 @@
+---------------------
+Personagem.jsx
+---------------------
+
+
+import React, { Component } from "react";
+
+class Personagem extends Component {
+    render() {
+        const { nome, casa, horario } = this.props
+        return (
+            <div>
+                <h2>Personagem {nome} da casa {casa} no horário {horario}</h2>
+            </div>
+        )
+    }
+}
+
+/*const Personagem = (props) => {
+    const { nome, casa } = props
+    return (
+        <div>
+            <h2>Personagem {nome} da casa {casa}</h2>
+        </div>
+    )
+}*/
+
+
+export default Personagem
+
+---------------------
+Casa.jsx
+--------------------
+
+import React, { Component } from "react";
+
+//import Personagem from "./Personagem";
+
+class Casa extends Component {
+    render() {
+        return (
+            <div>
+                <h1>{this.props.show}</h1>
+                {
+                    React.Children.map(
+                        this.props.children,
+                        (personagem) => {
+                            return React.cloneElement(
+                                personagem,
+                                { casa:this.props.casa,
+                                  horario:this.props.horario }
+                            )
+                        }
+                    )
+                }
+            </div>
+        )
+    }
+}
+
+/*const Casa = (props) =>
+    <div>
+        <h1>{props.show}</h1>
+        {
+            React.Children.map(
+                props.children,
+                (personagem)=>{
+                    return React.cloneElement(
+                        personagem,
+                        {...props}
+                    )
+                }
+            )
+        }
+    </div>
+
+*/
+
+export default Casa
+
+------------
+App.js
+-----------
