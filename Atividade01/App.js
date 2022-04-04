@@ -12,16 +12,16 @@ function App() {
   return(
     <Mundo mundo="Terra">
       <Arena arena='Jurubeba'>
+      <Arena arena="Jututu">
+      <Arena arena="Jururu">
         <Hero nome="José, o Bonzinho"/>
         <Enemy nome="Mário, o Malvadão"/>
+      </Arena>
+      </Arena>
       </Arena>
     </Mundo> 
   )
   
-
-
-
-}
 
   
   
