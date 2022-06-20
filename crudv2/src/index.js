@@ -9,10 +9,16 @@ import './index.css';
 import App from './App';
 //import reportWebVitals from './reportWebVitals';
 
+//Firebase
+import Firebase from "./utils/Firebase"
+import FirebaseContext from "./utils/FirebaseContext"
+
 ReactDOM.render(
+  <FirebaseContext.Provider value= {new Firebase()}>
   <BrowserRouter>
     <App />
   </BrowserRouter>,
+  </FirebaseContext.Provider>,
   document.getElementById('root')
 );
 

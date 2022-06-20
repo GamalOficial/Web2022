@@ -5,13 +5,24 @@ import axios from "axios";
 import StudentTableRow from "./StudentTableRow";
 //import { students } from './data.js'
 
+import FirebaseContext from "../../../utils/FirebaseContext"
+
+const ListStudentPage = () =>
+<FirebaseContext.Consumer>
+    {
+        (value)=>{
+            return <h1>Deu certo</h1>
+        }
+    }
+</FirebaseContext.Consumer>
+
 function ListStudent() {
 
     const [students, setStudents] = useState([])
 
     useEffect(
         () => {
-            axios.get("http://localhost:3001/students")
+            axios.get("http://localhost:3002/students")
                 .then(
                     (res) => {
                         setStudents(res.data)
@@ -65,4 +76,4 @@ function ListStudent() {
     );
 }
 
-export default ListStudent
+export default ListStudentPage
